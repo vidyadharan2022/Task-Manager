@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url('./background1.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #containername{
+            background-color: black;
+            position: sticky;
+            color: white;
+            padding: 30px;
+        }
+        #logincontainer{
+            position: relative;
+            color: white;
+            left: 34em;
+            top: 5em;
+            width: 500px;
+            height: 400px;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 2em;
+            backdrop-filter: blur(6px);
+        }
+        #loginname{
+            text-align: center;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            width: 450px;
+            margin-left: 25px;
+            padding-bottom: 20px;
+        }
+        #loginform{
+            font-size: x-large;
+        }
+        #label1{
+            position: relative;
+            left: 2em;
+            top: 1.3em;
+        }
+        #input1{
+            height: 25px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border: none;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            background: transparent;
+        }
+        #label2{
+            position: relative;
+            left: -13.2em;
+            top: 3.5em;
+        }
+        #input2{
+            position: relative;
+            left: 39em;bottom: 2.5em;
+            height: 25px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border: none;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            background: transparent;
+        }
+        #label3{
+            position: relative;
+            left: -6.6em;
+            top: 4.5em;
+        }
+        #input3{
+            position: relative;
+            left: 27em;bottom: 2.5em;
+            height: 25px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border: none;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            background: transparent;
+        }
+        #loginbut{
+            position: relative;
+            right: 0em;
+            top: 12em;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #lasti{
+            position: relative;
+            top: 9.7em;
+            left: 16em;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="containername">TaskManager</h1>
+    <div id="logincontainer">
+        <h1 id="loginname">SignUp</h1>
+        <form id="loginform">
+            <label for="name"id="label1">UserName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="input1"></input></label>
+            <label for="email" id="label2">Email ID <input type="email" id="input2"></input></label>
+            <label for="Password" id="label3">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="input3"></input></label>
+            <button type="button" id="loginbut">Signup</button>
+        </form>
+        <p id="lasti">Don't have an account?<a href="Login.html">Login</a></p>
+    </div>
+</body>
+<script>
+    
+</script>
+</html>

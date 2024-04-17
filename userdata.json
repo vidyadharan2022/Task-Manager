@@ -1,0 +1,32 @@
+{
+    "Users":[{ 
+        "name":"Kishore Kumar",
+        "Email": "kishore@gmail.com",
+        "Password": "123456789"
+    },
+    {
+        "name":"Kishore",
+        "Email": "kishoe@gmail.com",
+        "Password": "12345678"
+    },
+    {
+        "name":"Kumar",
+        "Email": "kumar@gmail.com",
+        "Password": "123456789"
+    },
+    {
+        "name":"Kish",
+        "Email": "kish@gmail.com",
+        "Password": "3456789"
+    },
+    {
+        "name":"Kishore Kumar",
+        "Email": "kishore@gmail.com",
+        "Password": "123456789"
+    },
+    {
+        "name":"Kishore Kumar",
+        "Email": "kishore@gmail.com",
+        "Password": "123456789"
+    }]
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="first.css">
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table th,table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input[type="text"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #005eff;
+  color: #000000;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #c01b1b;
+}
+
+#stopwatch {
+  text-align: center;
+}
+
+#timer {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#Times button {
+  margin-right: 10px;
+  background-color: #a72828;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#Times button:hover {
+  background-color: #882121;
+}
+#filterbut{
+  padding: 10px 20px;
+  background-color: #e1d415;
+  color: #000000;
+  border: none;
+  position: absolute;
+  left: 93%;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    
+      <form id="forms">
+        <div id="container">
+            <label for="category"><b style="margin-right: 38px;">Category</b> <b>: </b>
+            <input type="text" id="cat" required></label>
+            <label for="subcategory"><b style="margin-right: 5px;">SubCategory</b><b>:</b> 
+            <input type="text" id="subcat" required></label>
+            <label for="duration"><b style="margin-right: 89px;">Time</b><b>:</b> 
+                <div id="stopwatch">
+                    <div id="timer">
+                        <span id="hr">00</span> 
+                        <span >Hr</span>
+                        <span id="min">00</span> 
+                        <span >Min</span> 
+                        <span id="sec">00</span> 
+                        <span >Sec</span>
+                    </div>
+                    <div id="Times">
+                        <button type="button" id="setbtn" onclick="setStater()">Start</button>
+                        <button type="button" id="reset" onclick="resetstater()">Reset</button>
+                    </div>
+                </div>
+            <label id="taskid" for="task"><b style="margin-right: 99px;" >Task</b><b>:</b> 
+            <input type="text" id="tsk" required></label>
+            <button id="submitt">Add</button>
+        </div>
+      </form>   
+      <table id="table">
+        <tr>
+          <th>CATEGORY</th>
+          <th>SUB_CATEGORY</th>
+          <th>DURATION</th>
+          <th>TASK</th>
+        </tr>
+      </table>
+    <script>
+        var hrs=0;
+        var min=0;
+        var sec=0;
+        var v ="00:00:00";
+        var isrun = false;
+        function resetstater(){
+            var hrrs="00";
+            var minn="00";
+            var secc ="00";
+            document.getElementById("hr").innerHTML=hrrs;
+            document.getElementById("min").innerHTML=minn;
+            document.getElementById("sec").innerHTML=secc;
+            var r1= "Start";     
+            document.getElementById("setbtn").innerHTML=r1;
+             hrs=0;
+             min=0;
+             sec=0;
+            isrun=false;
+        }
+        function setStater(){
+            console.log("called");
+            if(!isrun){
+                var r= "Stop";     
+                document.getElementById("setbtn").innerHTML=r;
+                isrun=true;
+                StopWatch();
+            }
+            else{
+                isrun=false;
+                var r2= "Start";     
+                document.getElementById("setbtn").innerHTML=r2;
+            }
+            
+        }
+        
+        function StopWatch(){
+            if(isrun){
+                sec++;
+                if(sec==60){
+                    min++;
+                    sec=0;
+                }
+                if(min==60){
+                    hrs++;
+                    min=0;
+                    sec=0;
+                }
+                let hrstr=hrs;
+                let minstr=min;
+                let secstr=sec;
+                
+                if(hrs<10){
+                    hrstr="0"+hrstr;
+                }
+                if(min<10){
+                    minstr="0"+minstr;
+                }
+                if(sec<10){
+                    secstr="0"+secstr;
+                }
+                document.getElementById("hr").innerHTML=hrstr;
+                document.getElementById("min").innerHTML=minstr;
+                document.getElementById("sec").innerHTML=secstr;
+                v = hrstr+":"+minstr+":"+secstr;
+                setTimeout(StopWatch,1000);
+                
+            }
+        }
+        var data = [
+      {
+        category: "Personal",
+        sub_category: "Movie",
+        duration: "1:00:00",
+        task: "Finished",
+      },
+      {
+        category: "Work",
+        sub_category: "Presentation",
+        duration: "1:00:00",
+        task: "Not Finished",
+      },
+      {
+        category: "Personal",
+        sub_category: "Party",
+        duration: "1:00:00",
+        task: "Not Finished",
+      },
+      {
+        category: "Personal",
+        sub_category: "Sports",
+        duration: "1:00:00",
+        task: "Finished",
+      },
+      {
+        category: "Work",
+        sub_category: "Project",
+        duration: "1:00:00",
+        task: "Not Finished",
+      }
+    ];
+
+    var table = document.getElementById("table");
+    var tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+    data.map((users) => {
+      var row = document.createElement("tr");
+      for (var key in users) {
+        var cell = document.createElement("td");
+        cell.textContent = users[key];
+        row.appendChild(cell);
+      }
+      tbody.appendChild(row);
+    });
+
+    var ca=document.getElementById("cat");
+    var subca=document.getElementById("subcat");
+    var tk=document.getElementById("tsk");
+    const ent = document.getElementById("submitt");
+    ent.addEventListener('click',(d)=>{
+        d.preventDefault();
+        const obj = {
+            category:ca.value,
+            sub_category:subca.value,
+            duration:v,
+            task:tk.value
+        };
+        data.push(obj);
+        var row = document.createElement("tr");
+        for (var key in obj) {
+        var cell = document.createElement("td");
+        cell.textContent = obj[key];
+        row.appendChild(cell);
+        }
+        tbody.appendChild(row);
+    });
+    </script>
+</body>
+</html>
